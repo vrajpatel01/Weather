@@ -1,0 +1,383 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'KoHo', sans-serif;
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+  }
+
+::-webkit-scrollbar-track {
+    background: var(--color-two);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-one);
+    border-radius: 50px;
+}
+
+:root{
+    --color-one: #4C4C6D;
+    --color-two: #E8F0F2;
+    --color-three: #E5E5E5;
+    --color-four: #F9F9F9;
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: var(--color-two);
+}
+
+.navBar{
+    width: 100%;
+    height: auto;
+    background: var(--color-one);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.navBar .icon{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-two);
+    text-transform: capitalize;
+}
+
+.navBar a i{
+    text-decoration: none;
+    color: var(--color-three);
+}
+
+.mainclock{
+    width: auto;
+    height: auto;
+    margin: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.mainclock .time{
+    display: flex;
+    align-items: flex-end;
+}
+
+.mainclock h1{
+    font-weight: 400;
+    font-size: 60px;
+    color: var(--color-one);
+    margin: 0 6px;
+    line-height: 65px;
+    text-transform: capitalize;
+}
+
+.mainclock p{
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-one);
+    margin: 0 10px;
+    text-transform: uppercase;
+}
+
+.mainclock .date{
+    display: flex;
+}
+
+.rightCityName #CityName{
+    text-transform: uppercase;
+    font-size: 36px;
+}
+
+.centerAria{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #d1d8da, #f8ffff);
+    box-shadow: 20px 20px 60px #c5ccce,
+                -20px -20px 60px #ffffff;
+}
+
+#mainCelsius{
+    font-size: 64px;
+    color: var(--color-one);
+    font-weight: 400;
+}
+
+.description{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+}
+
+.description h1{
+    color: var(--color-one);
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.description span{
+    font-weight: 400;
+}
+
+/* wi-table  */
+
+.wi-table{
+    width: auto;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas: 
+    'tabl tate tafe'
+    'tam c1r1 c2r1'
+    'taa c1r2 c2r2'
+    'tae c1r3 c2r3'
+    'tani c1r4 c2r4';
+}
+.ta-bl{grid-area: tabl;}
+.ta-te{grid-area: tate;}
+.ta-fe{grid-area: tafe;}
+.ta-m{grid-area: tam;}
+.ta-a{grid-area: taa;}
+.ta-e{grid-area: tae;}
+.ta-n{grid-area: tani;}
+.c1r1{ grid-area: c1r1; }
+.c1r2{ grid-area: c1r2; }
+.c1r3{ grid-area: c1r3; }
+.c1r4{ grid-area: c1r4; }
+.c2r1{ grid-area: c2r1; }
+.c2r2{ grid-area: c2r2; }
+.c2r3{ grid-area: c2r3; }
+.c2r4{ grid-area: c2r4; }
+
+.wi-sun{
+    width: auto;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas:
+    'ws-sr ws-ss'
+    'ws-sr-t ws-ss-t' 
+    ;
+}
+
+.ws-sunrise{grid-area: ws-sr;}
+.ws-sunset{grid-area: ws-ss;}
+.ws-sunrise-time{grid-area: ws-sr-t;}
+.ws-sunset-time{grid-area: ws-ss-t;}
+
+.weeklyinfo{
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+    background: var(--color-two);
+}
+
+.wio{
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+}
+
+.card{
+    width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.card .day{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-two);
+    text-transform: capitalize;
+    background: var(--color-one);
+    padding: 8px 20px;
+    border-radius: 50px;
+}
+
+.card .wi-des{
+    font-size: 22px;
+    color: var(--color-one);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.card .wi-Celsius-hi-lo,
+.card .wi-Humidity,
+.card .wi-pressure,
+.card .wi-dewPoint,
+.card .wi-windSpeed,
+.card .wi-table .ta-te,
+.card .wi-table .ta-fe{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-one);
+    text-transform: capitalize;
+}
+
+.card .wi-sun .ws-sunrise,
+.card .wi-sun .ws-sunset{
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--color-one);
+    text-transform: capitalize;
+}
+
+.card .wi-table .ta-m,
+.card .wi-table .ta-a,
+.card .wi-table .ta-e,
+.card .wi-table .ta-n{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-one);
+    text-transform: capitalize;
+    text-align: end;
+}
+
+.card span{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-one);
+    text-transform: capitalize;
+}
+
+.wi-sun{
+    margin: 10px;
+    line-height: 10px;
+}
+
+.card .wi-sun .ws-sunrise-time,
+.card .wi-sun .ws-sunset-time{
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--color-one);
+    text-transform: capitalize;
+}
+
+.card .wi-table .c1r1,
+.card .wi-table .c1r2,
+.card .wi-table .c1r3,
+.card .wi-table .c1r4,
+.card .wi-table .c2r1,
+.card .wi-table .c2r2,
+.card .wi-table .c2r3,
+.card .wi-table .c2r4{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-one);
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.footerContent{
+    width: 100%;
+    height: auto;
+    padding: 10px 40px;
+    background: var(--color-two);
+}
+
+.footerContent p{
+    font-size: 18px;
+    color: var(--color-one);
+}
+
+.footerContent p a{
+    text-decoration: none;
+}
+
+.footerBar{
+    width: 100%;
+    height: 50px;
+    background: var(--color-one);
+    padding: 10px 40px;
+}
+
+.footerBar a{
+    font-size: 18px;
+    color: var(--color-two);
+    text-transform: capitalize;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+@media only screen and (max-width: 720px) and (min-width: 471px) {
+    
+    .mainclock{
+        margin: 10px 10px;
+    }
+
+    .mainclock h1{
+        font-size: 35px;
+        line-height: 40px;
+    }
+
+    .mainclock p{
+        font-size: 18px;
+    }
+
+    .rightCityName #CityName{
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .mainclock{
+        margin: 10px 5px;
+    }
+
+    .mainclock h1{
+        font-size: 25px;
+        line-height: 40px;
+    }
+
+    .mainclock p{
+        font-size: 18px;
+    }
+
+    .rightCityName #CityName{
+        font-size: 25px;
+    }
+
+    .description{
+        left: 5px;
+        bottom: 10px;
+    }
+
+    .description h1{
+        font-weight: 500;
+    }
+
+    .footerContent{
+        padding: 10px;
+    }
+
+    .footerContent p{
+        font-size: 15px;
+    }
+
+    .footerBar{
+        padding: 10px 10px;
+    }
+
+    .footerBar a{
+        font-size: 15px;
+    }
+}

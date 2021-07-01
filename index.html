@@ -5,126 +5,392 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clock</title>
+    <title>weather</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-            font-family: 'Roboto Slab', serif;
-        }
+    <!-- css  -->
+    <link rel="stylesheet" href="css/style.css">
 
-        body {
-            background: #4C4C6D;
-            color: #fff;
-        }
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        .main_contaner {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .card {
-            /* background: #B8DFD8; */
-            color: #B8DFD8;
-            width: 50%;
-            height: 50%;
-            border-radius: 5px;
-            border-radius: 15px;
-            background: #4C4C6D;
-            box-shadow: 20px 20px 60px #41415d,
-                -20px -20px 60px #41415d;
-            padding: 20px;
-            position: relative;
-        }
-
-        .time {
-            font-size: 70px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: auto;
-        }
-
-        .ampm {
-            font-size: 30px;
-            bottom: 20px;
-            right: 40px;
-            position: absolute;
-        }
-
-        .day{
-            font-size: 30px;
-            bottom: 20px;
-            left: 40px;
-            position: absolute;
-        }
-    </style>
 
 </head>
 
 <body>
-    <div class="main_contaner">
-        <div class="card">
-            <h1 id="clock" class="time">loading...</h1>
 
-            <p class="ampm" id="ampm"></p>
-            <p class="day" id="day"></p>
+    <!-- header  -->
+
+    <div class="header">
+
+        <!-- navBar -->
+        <div class="navBar">
+            <div class="icon">weather</div>
+            <a href="#"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+        </div>
+
+        <!-- Clock -->
+
+        <div class="mainclock">
+            <div class="leftClock">
+                <div class="time">
+                    <h1 id="clock">12 : 13</h1>
+                    <p id="ampm">am</p>
+                </div>
+                <div class="date">
+                    <h1 id="day">Monday, </h1>
+                    <h1 id="date">29</h1>
+                    <h1 id="month">Jun</h1>
+                </div>
+            </div>
+            <div class="rightCityName">
+                <!-- <h1 id="CityName">surat/in</h1> -->
+            </div>
+        </div>
+
+        <!-- center weather and Celsius -->
+
+        <div class="centerAria">
+            <img src="" alt="" id="mainWeatherIcon">
+            <h1 id="mainCelsius"></h1>
+        </div>
+
+        <!-- tody description -->
+        <div class="description">
+            <h1 id="weatherinfo">Overcast clouds</h1>
+            <h1>Feels like : <span id="FellsLike"></span></h1>
+            <h1>Humidity : <span id="Humidity"></span></h1>
         </div>
     </div>
 
-    <script>
-        setInterval(showTime, 1000);
-        function showTime() {
-            const time = new Date();
+    <div class="weeklyinfo">
+        <div class="wio">
+            <div class="card">
+                <h1 class="day">tody</h1>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" class="wi-icon">
+                <h1 class="wi-des">light rain</h1>
+                <h1 class="wi-Celsius-hi-lo">the hight will be <span id="hi-Celsius">28<span>°C</span></span><br>the low
+                    will be <span>28<span>°C</span></span></h1>
+                <h1 class="wi-Humidity">Humidity : <span id="wi-data-Humidity">63 <span>%</span></span></h1>
+                <h1 class="wi-pressure">pressure : <span id="wi-data-pressure">1018 <span>hPa</span></span></h1>
+                <h1 class="wi-dewPoint">dew point : <span id="wi-data-dewPoint">21<span>°C</span></span></h1>
+                <h1 class="wi-windSpeed">wind speen : <span id="wi-data-windSpeed">28</span></h1>
+                <div class="wi-table">
+                    <h3 class="ta-bl"></h3>
+                    <h3 class="ta-te">temperature</h3>
+                    <h3 class="ta-fe">fells like</h3>
+                    <h3 class="ta-m">morning</h3>
+                    <h3 class="ta-a">afternoon</h3>
+                    <h3 class="ta-e">evening</h3>
+                    <h3 class="ta-n">night</h3>
 
-            let hour = time.getHours();
-            let min = time.getMinutes();
-            let sec = time.getSeconds();
+                    <h3 class="c1r1">21<span>°C</span></h3>
+                    <h3 class="c1r2">21<span>°C</span></h3>
+                    <h3 class="c1r3">21<span>°C</span></h3>
+                    <h3 class="c1r4">21<span>°C</span></h3>
+                    <h3 class="c2r1">21<span>°C</span></h3>
+                    <h3 class="c2r2">21<span>°C</span></h3>
+                    <h3 class="c2r3">21<span>°C</span></h3>
+                    <h3 class="c2r4">21<span>°C</span></h3>
+                </div>
 
-            let am_pm = "AM";
+                <div class="wi-sun">
+                    <h3 class="ws-sunrise">sunrise</h3>
+                    <h3 class="ws-sunset">sunset</h3>
+                    <h3 class="ws-sunrise-time">5:18am</h3>
+                    <h3 class="ws-sunset-time">8:29pm</h3>
+                </div>
+            </div>
 
-            if (hour > 12) {
-                hour -= 12;
-                am_pm = "PM";
-            }
-            if (hour == 0) {
-                hour = 12;
-                am_pm = "AM";
-            }
+            <div class="card">
+                <h1 class="day">sunday</h1>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" class="wi-icon">
+                <h1 class="wi-des">light rain</h1>
+                <h1 class="wi-Celsius-hi-lo">the hight will be <span id="hi-Celsius">28<span>°C</span></span><br>the low
+                    will be <span>28<span>°C</span></span></h1>
+                <h1 class="wi-Humidity">Humidity : <span id="wi-data-Humidity">63 <span>%</span></span></h1>
+                <h1 class="wi-pressure">pressure : <span id="wi-data-pressure">1018 <span>hPa</span></span></h1>
+                <h1 class="wi-dewPoint">dew point : <span id="wi-data-dewPoint">21<span>°C</span></span></h1>
+                <h1 class="wi-windSpeed">wind speen : <span id="wi-data-windSpeed">28</span></h1>
+                <div class="wi-table">
+                    <h3 class="ta-bl"></h3>
+                    <h3 class="ta-te">temperature</h3>
+                    <h3 class="ta-fe">fells like</h3>
+                    <h3 class="ta-m">morning</h3>
+                    <h3 class="ta-a">afternoon</h3>
+                    <h3 class="ta-e">evening</h3>
+                    <h3 class="ta-n">night</h3>
 
-            var weekday = new Array(7);
-            weekday[0] = "Sunday";
-            weekday[1] = "Monday";
-            weekday[2] = "Tuesday";
-            weekday[3] = "Wednesday";
-            weekday[4] = "Thursday";
-            weekday[5] = "Friday";
-            weekday[6] = "Saturday";
+                    <h3 class="c1r1">21<span>°C</span></h3>
+                    <h3 class="c1r2">21<span>°C</span></h3>
+                    <h3 class="c1r3">21<span>°C</span></h3>
+                    <h3 class="c1r4">21<span>°C</span></h3>
+                    <h3 class="c2r1">21<span>°C</span></h3>
+                    <h3 class="c2r2">21<span>°C</span></h3>
+                    <h3 class="c2r3">21<span>°C</span></h3>
+                    <h3 class="c2r4">21<span>°C</span></h3>
+                </div>
 
-            let currentTime = hour + " : " + min + " : " + sec;
+                <div class="wi-sun">
+                    <h3 class="ws-sunrise">sunrise</h3>
+                    <h3 class="ws-sunset">sunset</h3>
+                    <h3 class="ws-sunrise-time">5:18am</h3>
+                    <h3 class="ws-sunset-time">8:29pm</h3>
+                </div>
+            </div>
 
-            let currentDay = weekday[time.getDay()];
+            <div class="card">
+                <h1 class="day">monday</h1>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" class="wi-icon">
+                <h1 class="wi-des">light rain</h1>
+                <h1 class="wi-Celsius-hi-lo">the hight will be <span id="hi-Celsius">28<span>°C</span></span><br>the low
+                    will be <span>28<span>°C</span></span></h1>
+                <h1 class="wi-Humidity">Humidity : <span id="wi-data-Humidity">63 <span>%</span></span></h1>
+                <h1 class="wi-pressure">pressure : <span id="wi-data-pressure">1018 <span>hPa</span></span></h1>
+                <h1 class="wi-dewPoint">dew point : <span id="wi-data-dewPoint">21<span>°C</span></span></h1>
+                <h1 class="wi-windSpeed">wind speen : <span id="wi-data-windSpeed">28</span></h1>
+                <div class="wi-table">
+                    <h3 class="ta-bl"></h3>
+                    <h3 class="ta-te">temperature</h3>
+                    <h3 class="ta-fe">fells like</h3>
+                    <h3 class="ta-m">morning</h3>
+                    <h3 class="ta-a">afternoon</h3>
+                    <h3 class="ta-e">evening</h3>
+                    <h3 class="ta-n">night</h3>
 
-            document.getElementById('clock').innerHTML = currentTime;
+                    <h3 class="c1r1">21<span>°C</span></h3>
+                    <h3 class="c1r2">21<span>°C</span></h3>
+                    <h3 class="c1r3">21<span>°C</span></h3>
+                    <h3 class="c1r4">21<span>°C</span></h3>
+                    <h3 class="c2r1">21<span>°C</span></h3>
+                    <h3 class="c2r2">21<span>°C</span></h3>
+                    <h3 class="c2r3">21<span>°C</span></h3>
+                    <h3 class="c2r4">21<span>°C</span></h3>
+                </div>
 
-            document.getElementById('ampm').innerHTML = am_pm;
+                <div class="wi-sun">
+                    <h3 class="ws-sunrise">sunrise</h3>
+                    <h3 class="ws-sunset">sunset</h3>
+                    <h3 class="ws-sunrise-time">5:18am</h3>
+                    <h3 class="ws-sunset-time">8:29pm</h3>
+                </div>
+            </div>
 
-            document.getElementById('day').innerHTML = currentDay;
-        }
+            <div class="card">
+                <h1 class="day">tuesday</h1>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" class="wi-icon">
+                <h1 class="wi-des">light rain</h1>
+                <h1 class="wi-Celsius-hi-lo">the hight will be <span id="hi-Celsius">28<span>°C</span></span><br>the low
+                    will be <span>28<span>°C</span></span></h1>
+                <h1 class="wi-Humidity">Humidity : <span id="wi-data-Humidity">63 <span>%</span></span></h1>
+                <h1 class="wi-pressure">pressure : <span id="wi-data-pressure">1018 <span>hPa</span></span></h1>
+                <h1 class="wi-dewPoint">dew point : <span id="wi-data-dewPoint">21<span>°C</span></span></h1>
+                <h1 class="wi-windSpeed">wind speen : <span id="wi-data-windSpeed">28</span></h1>
+                <div class="wi-table">
+                    <h3 class="ta-bl"></h3>
+                    <h3 class="ta-te">temperature</h3>
+                    <h3 class="ta-fe">fells like</h3>
+                    <h3 class="ta-m">morning</h3>
+                    <h3 class="ta-a">afternoon</h3>
+                    <h3 class="ta-e">evening</h3>
+                    <h3 class="ta-n">night</h3>
 
-    </script>
+                    <h3 class="c1r1">21<span>°C</span></h3>
+                    <h3 class="c1r2">21<span>°C</span></h3>
+                    <h3 class="c1r3">21<span>°C</span></h3>
+                    <h3 class="c1r4">21<span>°C</span></h3>
+                    <h3 class="c2r1">21<span>°C</span></h3>
+                    <h3 class="c2r2">21<span>°C</span></h3>
+                    <h3 class="c2r3">21<span>°C</span></h3>
+                    <h3 class="c2r4">21<span>°C</span></h3>
+                </div>
+
+                <div class="wi-sun">
+                    <h3 class="ws-sunrise">sunrise</h3>
+                    <h3 class="ws-sunset">sunset</h3>
+                    <h3 class="ws-sunrise-time">5:18am</h3>
+                    <h3 class="ws-sunset-time">8:29pm</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="day">Wednesday</h1>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" class="wi-icon">
+                <h1 class="wi-des">light rain</h1>
+                <h1 class="wi-Celsius-hi-lo">the hight will be <span id="hi-Celsius">28<span>°C</span></span><br>the low
+                    will be <span>28<span>°C</span></span></h1>
+                <h1 class="wi-Humidity">Humidity : <span id="wi-data-Humidity">63 <span>%</span></span></h1>
+                <h1 class="wi-pressure">pressure : <span id="wi-data-pressure">1018 <span>hPa</span></span></h1>
+                <h1 class="wi-dewPoint">dew point : <span id="wi-data-dewPoint">21<span>°C</span></span></h1>
+                <h1 class="wi-windSpeed">wind speen : <span id="wi-data-windSpeed">28</span></h1>
+                <div class="wi-table">
+                    <h3 class="ta-bl"></h3>
+                    <h3 class="ta-te">temperature</h3>
+                    <h3 class="ta-fe">fells like</h3>
+                    <h3 class="ta-m">morning</h3>
+                    <h3 class="ta-a">afternoon</h3>
+                    <h3 class="ta-e">evening</h3>
+                    <h3 class="ta-n">night</h3>
+
+                    <h3 class="c1r1">21<span>°C</span></h3>
+                    <h3 class="c1r2">21<span>°C</span></h3>
+                    <h3 class="c1r3">21<span>°C</span></h3>
+                    <h3 class="c1r4">21<span>°C</span></h3>
+                    <h3 class="c2r1">21<span>°C</span></h3>
+                    <h3 class="c2r2">21<span>°C</span></h3>
+                    <h3 class="c2r3">21<span>°C</span></h3>
+                    <h3 class="c2r4">21<span>°C</span></h3>
+                </div>
+
+                <div class="wi-sun">
+                    <h3 class="ws-sunrise">sunrise</h3>
+                    <h3 class="ws-sunset">sunset</h3>
+                    <h3 class="ws-sunrise-time">5:18am</h3>
+                    <h3 class="ws-sunset-time">8:29pm</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="day">Thursday</h1>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" class="wi-icon">
+                <h1 class="wi-des">light rain</h1>
+                <h1 class="wi-Celsius-hi-lo">the hight will be <span id="hi-Celsius">28<span>°C</span></span><br>the low
+                    will be <span>28<span>°C</span></span></h1>
+                <h1 class="wi-Humidity">Humidity : <span id="wi-data-Humidity">63 <span>%</span></span></h1>
+                <h1 class="wi-pressure">pressure : <span id="wi-data-pressure">1018 <span>hPa</span></span></h1>
+                <h1 class="wi-dewPoint">dew point : <span id="wi-data-dewPoint">21<span>°C</span></span></h1>
+                <h1 class="wi-windSpeed">wind speen : <span id="wi-data-windSpeed">28</span></h1>
+                <div class="wi-table">
+                    <h3 class="ta-bl"></h3>
+                    <h3 class="ta-te">temperature</h3>
+                    <h3 class="ta-fe">fells like</h3>
+                    <h3 class="ta-m">morning</h3>
+                    <h3 class="ta-a">afternoon</h3>
+                    <h3 class="ta-e">evening</h3>
+                    <h3 class="ta-n">night</h3>
+
+                    <h3 class="c1r1">21<span>°C</span></h3>
+                    <h3 class="c1r2">21<span>°C</span></h3>
+                    <h3 class="c1r3">21<span>°C</span></h3>
+                    <h3 class="c1r4">21<span>°C</span></h3>
+                    <h3 class="c2r1">21<span>°C</span></h3>
+                    <h3 class="c2r2">21<span>°C</span></h3>
+                    <h3 class="c2r3">21<span>°C</span></h3>
+                    <h3 class="c2r4">21<span>°C</span></h3>
+                </div>
+
+                <div class="wi-sun">
+                    <h3 class="ws-sunrise">sunrise</h3>
+                    <h3 class="ws-sunset">sunset</h3>
+                    <h3 class="ws-sunrise-time">5:18am</h3>
+                    <h3 class="ws-sunset-time">8:29pm</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="day">Friday</h1>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" class="wi-icon">
+                <h1 class="wi-des">light rain</h1>
+                <h1 class="wi-Celsius-hi-lo">the hight will be <span id="hi-Celsius">28<span>°C</span></span><br>the low
+                    will be <span>28<span>°C</span></span></h1>
+                <h1 class="wi-Humidity">Humidity : <span id="wi-data-Humidity">63 <span>%</span></span></h1>
+                <h1 class="wi-pressure">pressure : <span id="wi-data-pressure">1018 <span>hPa</span></span></h1>
+                <h1 class="wi-dewPoint">dew point : <span id="wi-data-dewPoint">21<span>°C</span></span></h1>
+                <h1 class="wi-windSpeed">wind speen : <span id="wi-data-windSpeed">28</span></h1>
+                <div class="wi-table">
+                    <h3 class="ta-bl"></h3>
+                    <h3 class="ta-te">temperature</h3>
+                    <h3 class="ta-fe">fells like</h3>
+                    <h3 class="ta-m">morning</h3>
+                    <h3 class="ta-a">afternoon</h3>
+                    <h3 class="ta-e">evening</h3>
+                    <h3 class="ta-n">night</h3>
+
+                    <h3 class="c1r1">21<span>°C</span></h3>
+                    <h3 class="c1r2">21<span>°C</span></h3>
+                    <h3 class="c1r3">21<span>°C</span></h3>
+                    <h3 class="c1r4">21<span>°C</span></h3>
+                    <h3 class="c2r1">21<span>°C</span></h3>
+                    <h3 class="c2r2">21<span>°C</span></h3>
+                    <h3 class="c2r3">21<span>°C</span></h3>
+                    <h3 class="c2r4">21<span>°C</span></h3>
+                </div>
+
+                <div class="wi-sun">
+                    <h3 class="ws-sunrise">sunrise</h3>
+                    <h3 class="ws-sunset">sunset</h3>
+                    <h3 class="ws-sunrise-time">5:18am</h3>
+                    <h3 class="ws-sunset-time">8:29pm</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="day">Saturday</h1>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" class="wi-icon">
+                <h1 class="wi-des">light rain</h1>
+                <h1 class="wi-Celsius-hi-lo">the hight will be <span id="hi-Celsius">28<span>°C</span></span><br>the low
+                    will be <span>28<span>°C</span></span></h1>
+                <h1 class="wi-Humidity">Humidity : <span id="wi-data-Humidity">63 <span>%</span></span></h1>
+                <h1 class="wi-pressure">pressure : <span id="wi-data-pressure">1018 <span>hPa</span></span></h1>
+                <h1 class="wi-dewPoint">dew point : <span id="wi-data-dewPoint">21<span>°C</span></span></h1>
+                <h1 class="wi-windSpeed">wind speen : <span id="wi-data-windSpeed">28</span></h1>
+                <div class="wi-table">
+                    <h3 class="ta-bl"></h3>
+                    <h3 class="ta-te">temperature</h3>
+                    <h3 class="ta-fe">fells like</h3>
+                    <h3 class="ta-m">morning</h3>
+                    <h3 class="ta-a">afternoon</h3>
+                    <h3 class="ta-e">evening</h3>
+                    <h3 class="ta-n">night</h3>
+
+                    <h3 class="c1r1">21<span>°C</span></h3>
+                    <h3 class="c1r2">21<span>°C</span></h3>
+                    <h3 class="c1r3">21<span>°C</span></h3>
+                    <h3 class="c1r4">21<span>°C</span></h3>
+                    <h3 class="c2r1">21<span>°C</span></h3>
+                    <h3 class="c2r2">21<span>°C</span></h3>
+                    <h3 class="c2r3">21<span>°C</span></h3>
+                    <h3 class="c2r4">21<span>°C</span></h3>
+                </div>
+
+                <div class="wi-sun">
+                    <h3 class="ws-sunrise">sunrise</h3>
+                    <h3 class="ws-sunset">sunset</h3>
+                    <h3 class="ws-sunrise-time">5:18am</h3>
+                    <h3 class="ws-sunset-time">8:29pm</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer content  -->
+
+    <div class="footerContent">
+        <p>Thank you for using Weather app! You can follow me on Twitter <a href="#">@vrajpatel</a> </p>
+        <p>~ vraj patel <a href="#">(http://lv-developer.online/)</a></p>
+    </div>
+    <!-- footerBar -->
+
+    <div class="footerBar">
+        <a href="#">about developer</a>
+        <a href="#">api source</a>
+        <a href="#">source code</a>
+    </div>
+
+    <!-- javaScript -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="js/main.js"></script>
+
+
 
 </body>
-
 
 </html>
