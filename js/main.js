@@ -1,3 +1,18 @@
+navigator.permissions.query({ name: 'geolocation' }).then(function(result) {
+    /* result.status = "prompt" */
+});
+
+
+navigator.geolocation.getCurrentPosition(function(result) { /* ... */  })
+
+navigator.permissions.query({ name: 'geolocation' }).then(function(result) {
+    /* result.status = "granted" */
+});
+
+navigator.permissions.query({ name: 'push', userVisibleOnly:true }).then(function(result) { /* ... */ });
+
+// fvfbfbfbgfngfng
+
 
 var monthName = ['Jun', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 var dayName = ['Sunday,', 'Monday,', 'Tuesday,', 'Wednesday,', 'Thursday,', 'Friday,', 'Saturday,'];
