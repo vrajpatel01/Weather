@@ -24,7 +24,7 @@ document.querySelector('#month').innerHTML = monthName[month];
 
 // get Latitude and Longitude
 
-var owk = "69dc349d09c031d090c94ed888134aa6";
+var owk = "8f9af3c9d7160da28ffe83ce0a0081e5";
 
 getWeatherData();
 
